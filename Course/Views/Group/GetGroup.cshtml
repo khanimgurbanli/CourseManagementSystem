@@ -1,0 +1,40 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Groups
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h3>Edit group</h3><br /><br />
+    @using (Html.BeginForm("EditGroup", "Group", FormMethod.Post))
+    {
+<div>
+    @Html.HiddenFor(x => x.ID, new { @class = "form-control" });
+    @Html.LabelFor(x => x.Name)<br />
+    @Html.TextBoxFor(x => x.Name, new { @Value = Model.Name, @class = "form-control" })<br />
+    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(x => x.BeginDate)<br />
+    @Html.TextBoxFor(x => x.BeginDate, new { @Value = Model.BeginDate.ToShortDateString(), @class = "form-control" })<br />
+    @Html.ValidationMessageFor(x => x.BeginDate, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(x => x.EndDate)<br />
+    @Html.TextBoxFor(x => x.EndDate, new { @Value = Model.EndDate.ToShortDateString(), @class = "form-control" })<br />
+    @Html.ValidationMessageFor(x => x.EndDate, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(x => x.Course)<br />
+    @Html.DropDownListFor(x => x.CourseId, (List<SelectListItem>)ViewBag.CourseList, new { @class = "form-control" })<br />
+    @Html.ValidationMessageFor(x => x.CourseId, "", new { @class = "text-danger" })<br />
+
+    @Html.LabelFor(x => x.Teacher)<br />
+    @Html.DropDownListFor(x => x.TeacherId, (List<SelectListItem>)ViewBag.TeacherList, new { @class = "form-control" })<br />
+    @Html.ValidationMessageFor(x => x.CourseId, "", new { @class = "text-danger" })<br />
+    <button class="btn btn-success">Edit</button>
+</div>
+    }
+</body>
+</html>

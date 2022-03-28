@@ -1,0 +1,32 @@
+﻿@model Courses
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <h3>Add Course</h3><br /><br />
+    <div>
+        @using (Html.BeginForm("AddCourse", "Course", FormMethod.Post))
+        {
+           
+            @Html.LabelFor(x => x.Name)<br />
+            @Html.TextBoxFor(x => x.Name, new { @placeholder = "Course name", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Name, "",new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Price)<br />
+            @Html.TextBoxFor(x => x.Price, new { @placeholder = "Course of price", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Price, "",new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Date)<br />
+            @Html.TextBoxFor(x => x.Date, new {  @placeholder = "Date and Time", @class = "form-control" , type = "datetime"})<br />
+            @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })<br />
+
+            <input type="submit" class="btn btn-success" value="Add">
+        }
+    </div>
+</body>
+</html>

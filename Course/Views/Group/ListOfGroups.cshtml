@@ -1,0 +1,53 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Groups>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <h1><a href="/Group/CreateGroup">Create Group</a></h1><br /><br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Begin date</th>
+                <th>End date</th>
+                <th>Course</th>
+                <th>Teacher</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var item in Model)
+            {
+            <tr>
+                @if (@item.Status == 1)
+                {
+                    <td>@item.Name</td>
+                    <td>@item.BeginDate.ToShortDateString()</td>
+                    <td>@item.EndDate.ToShortDateString()</td>
+                    <td>@item.Course.Name</td>
+                    <td>@item.Teacher.FirstName</td>
+                    <td>Active</td>
+                    <td><a href="/Group/GetGroup/@item.ID">Edit</a><a href="/Group/DeleteGroup/@item.ID">Delete</a></td>
+                }
+                else
+                {
+                    <td>@item.Name</td>
+                    <td>@item.BeginDate.ToShortDateString()</td>
+                    <td>@item.EndDate.ToShortDateString()</td>
+                    <td>@item.Course.Name</td>
+                    <td>@item.Teacher.FirstName</td>
+                    <td>Deleted group</td>
+                }
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

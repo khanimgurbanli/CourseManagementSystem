@@ -1,0 +1,21 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+    Təsdiq maili elektron poçt ünavnınıza göndərildi. Zəhmət olmasa, e-poçt ünvanınızı yoxlayın. Hesabınızı təsdiq etdikdən sonra giriş edə bilərsiniz
+</p>
+    }
+    else
+    {
+<p>
+        Please check your email to confirm your account.
+</p>
+    }
+}

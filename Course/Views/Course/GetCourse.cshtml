@@ -1,0 +1,32 @@
+﻿
+@model Courses
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <h3>Edit course</h3><br /><br />
+    <div>
+        @using (Html.BeginForm("EditCourse", "Course", FormMethod.Post))
+        {
+            @Html.HiddenFor(x => x.ID, new { @class = "form-control" });
+
+            @Html.Label("Course")<br />
+            @Html.TextBoxFor(x => x.Name, new { @Value = Model.Name, @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })<br />
+
+            @Html.Label("Price")<br />
+            @Html.TextBoxFor(x => x.Price, new { @Value = Model.Price, @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })<br />
+
+            @Html.Label("Begin date and time")<br />
+            @Html.TextBoxFor(x => x.Date, new { Type = "datetime", @Value = Model.Date.ToShortDateString(), @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })<br />
+            <button class="btn btn-info">Edit</button>
+        }
+    </div>
+</body>
+</html>

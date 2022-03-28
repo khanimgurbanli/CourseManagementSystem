@@ -1,0 +1,42 @@
+﻿@model Groups
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h3>Create Group</h3><br /><br />
+
+    <h4 class="text-danger">@ViewBag.checkResultMessage</h4>
+
+    @using (Html.BeginForm("CreateGroup", "Group", FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(x => x.Name)<br />
+            @Html.TextBoxFor(x => x.Name, new { @placeholder = "Group name", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.BeginDate)<br />
+            @Html.TextBoxFor(x => x.BeginDate,new { type = "date", @placeholder = "Begin time", @class = "form-control" } )<br />
+            @Html.ValidationMessageFor(x => x.BeginDate, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.EndDate)<br />
+            @Html.TextBoxFor(x => x.EndDate, new { type = "date", @placeholder = "End time", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.EndDate, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Course)<br />
+            @Html.DropDownListFor(x => x.CourseId, (List<SelectListItem>)ViewBag.CourseList, "Select", new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.CourseId, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Teacher)<br />
+            @Html.DropDownListFor(x => x.TeacherId, (List<SelectListItem>)ViewBag.TeacherList, "Select", new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.TeacherId, "", new { @class = "text-danger" })<br />
+            <button class="btn btn-success">Create</button>
+        </div>
+    }
+</body>
+</html>
