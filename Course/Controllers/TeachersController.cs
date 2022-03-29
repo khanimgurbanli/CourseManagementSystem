@@ -121,20 +121,29 @@ namespace Course.Controllers
         }
 
 
-        public IActionResult ConfirmTeacher(int? id)
+        public IActionResult DeactiveTeacher(int? id)
         {
-            var checkStatus = db.Teachers.Where( t=> t.Id == id).FirstOrDefault();
+            var deactiveTeacherById = db.Teachers.Where( t=> t.Id == id).FirstOrDefault();
 
-            if (checkStatus.Status == 0)
-            {
-                thr.Status = 1;
-                db.Update(thr);
-                db.SaveChanges();
-            }
+            deactiveTeacherById.Status = 0;
+            db.Update(deactiveTeacherById);
+            db.SaveChanges();
 
             return RedirectToAction("ListOfTeachers");
         }
 
+
+        public IActionResult ActiveTeacher(int? id)
+        {
+
+            var activeTeacherById = db.Teachers.Where(t => t.Id == id).FirstOrDefault();
+
+            activeTeacherById.Status = 1;
+            db.Update(activeTeacherById);
+            db.SaveChanges();
+
+            return RedirectToAction("ListOfTeachers");
+        }
 
         public IActionResult DeleteTeacher(int? id)
         {
@@ -151,16 +160,6 @@ namespace Course.Controllers
             return RedirectToAction("ListOfTeachers");
         }
 
-        public IActionResult EnableTeacher(int? id)
-        {
-
-            var enableTeacherById = db.Teachers.Where(t => t.Id == id).FirstOrDefault();
-
-            enableTeacherById.Status = 1;
-            db.Update(enableTeacherById);
-            db.SaveChanges();
-
-            return RedirectToAction("ListOfTeachers");
-        }
+      
     }
 }

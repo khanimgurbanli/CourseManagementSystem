@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <h1><a href="/Group/CreateGroup">Create Group</a></h1><br /><br />
+    <h4><a class="btn btn-success" href="/Group/CreateGroup">Create Group</a></h4><br /><br />
+    <h5 class="btn-danger">@ViewBag.checkResultMessage</h5>
     <table class="table">
         <thead>
             <tr>
@@ -29,11 +30,19 @@
                 {
                     <td>@item.Name</td>
                     <td>@item.BeginDate.ToShortDateString()</td>
-                    <td>@item.EndDate.ToShortDateString()</td>
                     <td>@item.Course.Name</td>
                     <td>@item.Teacher.FirstName</td>
                     <td>Active</td>
-                    <td><a href="/Group/GetGroup/@item.ID">Edit</a><a href="/Group/DeleteGroup/@item.ID">Delete</a></td>
+                    <td><a  href="/Group/GetGroup/@item.ID">Edit</a><a  href="/Group/DeleteGroup/@item.ID">Delete</a><a href="/Group/DeactiveGroup/@item.ID">Deactive</a></td>
+                }
+                else if (@item.Status == 2)
+                {
+                    <td>@item.Name</td>
+                    <td>@item.BeginDate.ToShortDateString()</td>
+                    <td>@item.EndDate.ToShortDateString()</td>
+                    <td>@item.Course.Name</td>
+                    <td>@item.Teacher.FirstName</td>
+                    <td>Deleted group</td>
                 }
                 else
                 {
@@ -42,7 +51,8 @@
                     <td>@item.EndDate.ToShortDateString()</td>
                     <td>@item.Course.Name</td>
                     <td>@item.Teacher.FirstName</td>
-                    <td>Deleted group</td>
+                    <td>Deactive</td>
+                    <td><a href="/Group/DeactiveeGroup/@item.ID">Enable</a></td>
                 }
 
             </tr>

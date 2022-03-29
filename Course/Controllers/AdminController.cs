@@ -12,40 +12,16 @@ namespace Course.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly ApplicationDbContext db;
-        public AdminController(ApplicationDbContext db)
-        {
-            this.db = db;
-        }
-
         public IActionResult Index()
         {
-            var GetList = db.Courses.ToList();
+          //Admin qeydiyyatdan keçir. Hesab Təsdiqi rəhbərin Mailinə gələn təsdiq linki ilə gerçəkəşir
+          //Qalan işlər=> 
+          // 1-Lislərə filter  əlavə etmək
+          // 2-Gogle chart istifadə etmək
+          // 3- Kurs reklam posterləri və müəllim, tələbə profil şəkli əlavə etmək
+          // 4-Student və Teacher cədvəllərinə kurs və grup əlavə etmək
+          // 5-List datanı pdf olaraq yükləmək
             return View();
         }
-
-        public IActionResult LoginAdmin()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult LoginAdmin(string username, string pass)
-        {
-            return View();
-        }
-
-        public IActionResult RegisterAdmin()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult RegisterAdmin(Admin admin)
-        {
-            return View();
-        }
-
-       
     }
 }

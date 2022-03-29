@@ -21,9 +21,11 @@ namespace Course.Models
         public double Price { get; set; }
 
         [Required(ErrorMessage = "Date of birth is required")]
-        public DateTime Date { get; set; }
+        public DateTime BeginDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         public List<Groups> Groups { get; set; }
+        public List<Students> Students { get; set; }
 
 
     }

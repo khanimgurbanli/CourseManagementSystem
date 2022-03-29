@@ -13,7 +13,7 @@ namespace Course.Services
         public Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
             MailMessage msg = new MailMessage();
-            msg.From = new MailAddress("zeri.q.222@gmail.com", "Confirm  email link from Students Course");
+            msg.From = new MailAddress("sahdkjasd@gmail.com", "Confirm  email link from Students Course");
             msg.Subject = subject;
             msg.To.Add(email);
             msg.Body = htmlMessage;
@@ -25,7 +25,7 @@ namespace Course.Services
             client.Port = 587;
             client.EnableSsl = true;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.Credentials = new NetworkCredential("bankcardoperations@gmail.com", "bankcard18");
+            client.Credentials = new NetworkCredential("nobodynobodyva@gmail.com", "shsdjsdhjs");
             client.Timeout = 20000;
             client.Send(msg);
 

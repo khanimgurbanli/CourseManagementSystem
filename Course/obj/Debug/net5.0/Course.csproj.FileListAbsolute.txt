@@ -141,7 +141,6 @@ C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Cou
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Course.RazorCoreGenerate.cache
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -197,7 +196,6 @@ C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Raz
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Course.csproj.AssemblyReference.cache
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Course\AddCourse.cshtml.g.cs
-C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Group\ListOfGroups.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Group\CreateGroup.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Group\GetGroup.cshtml.g.cs

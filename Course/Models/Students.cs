@@ -31,11 +31,11 @@ namespace Course.Models
         [Required(ErrorMessage = "Mail is required")]
         [EmailAddress]
         public string Mail { get; set; }
-     //   public string DeletedDate { get; set; }
 
         [Required(ErrorMessage = "Number is required")]
         [RegularExpression(@"^(?=.*[0-9])[- .()0-9]+$", ErrorMessage = "Invalid Mobile number")]
         public string Mobile { get; set; }
         public List<Groups> Groups { get; set; }
+        public List<Courses> Courses { get; set; }
     }
 }

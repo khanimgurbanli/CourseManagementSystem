@@ -23,8 +23,8 @@
             @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })<br />
 
             @Html.Label("Begin date and time")<br />
-            @Html.TextBoxFor(x => x.Date, new { Type = "datetime", @Value = Model.Date.ToShortDateString(), @class = "form-control" })<br />
-            @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })<br />
+            @Html.TextBoxFor(x => x.BeginDate, new { Type = "datetime", @Value = Model.BeginDate.ToShortDateString(), @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.BeginDate, "", new { @class = "text-danger" })<br />
             <button class="btn btn-info">Edit</button>
         }
     </div>

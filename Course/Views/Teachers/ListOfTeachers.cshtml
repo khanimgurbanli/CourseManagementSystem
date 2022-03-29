@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <h5><a href="/Teachers/AddTeacher">Add Teacher</a></h5><br /><br />
+    <h5><a class="btn btn-success" href="/Teachers/AddTeacher">Add Teacher</a></h5><br /><br />
     <h3>Teachers list</h3>
     <table class="table">
         <thead>
@@ -37,7 +37,7 @@
                         <td>@item.Mail</td>
                         <td>@item.Mobile</td>
                         <td>Active</td>
-                        <td><a href="/Teachers/GetTeacher/@item.Id">Edit</a><a href="/Teachers/DeleteTeacher/@item.Id">Delete</a></td>
+                        <td><a href="/Teachers/GetTeacher/@item.Id">Edit</a><a href="/Teachers/DeleteTeacher/@item.Id">Delete</a><a  href="/Teachers/DeactiveTeacher/@item.Id">Deactive</a></td>
                     }
                     else if (@item.Status == 0)
                     {
@@ -48,10 +48,10 @@
                         <td>@item.EnrollmentDate.ToShortDateString()</td>
                         <td>@item.Mail</td>
                         <td>@item.Mobile</td>
-                        <td>Waiting for confirmation</td>
-                        <td><a href="/Teachers/ConfirmTeacher/@item.Id">Confirm</a></td>
+                        <td>Deactived</td>
+                        <td><a ref="/Teachers/ActiveTeacher/@item.Id">Active</a></td>
                     }
-                    else
+                    else if (@item.Status == 2)
                     {
                         <td>@item.FirstName</td>
                         <td>@item.LastName</td>
@@ -60,9 +60,7 @@
                         <td>@item.EnrollmentDate.ToShortDateString()</td>
                         <td>@item.Mail</td>
                         <td>@item.Mobile</td>
-                        <td>Deleted teacher</td>
-                        <td><a href="/Teachers/EnableTeacher/@item.Id">Enable</a></td>
-
+                        <td>Deleted</td>
                     }
 
                 </tr>

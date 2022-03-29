@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <h5><a href="/Course/AddCourse">Create Course</a></h5><br /><br />
+    <h5><a class="btn btn-success" href="/Course/AddCourse">Create Course</a></h5><br /><br />
     <h3>Courses list</h3>
     <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Date</th>
+                <th>BeginDate</th>
+                <th>EndDate</th>
                 <th>Status</th>
                 <th>Details</th>
             </tr>
@@ -24,24 +25,34 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    @if (@item.Status == 1)
-                    {
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                        <td>@item.Date.ToShortDateString()</td>
-                        <td>Active</td>
-                        <td><a href="/Course/GetCourse/@item.ID">Edit</a><a href="/Course/DeleteCourse/@item.ID">Delete</a></td>
-                    }
-                    else
-                    {
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                        <td>@item.Date.ToShortDateString()</td>
-                        <td>Deleted course</td>
-                    }
+            <tr>
+                @if (@item.Status == 1)
+                {
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.BeginDate.ToShortDateString()</td>
+                    <td>Active</td>
+                    <td><a href="/Course/GetCourse/@item.ID">Edit</a><a  href="/Course/DeleteCourse/@item.ID">Delete</a><a href="/Course/DeactiveCourse/@item.ID">Deactive</a></td>
+                }
+                else if (@item.Status == 2)
+                {
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.BeginDate.ToShortDateString()</td>
+                    <td>@item.EndDate.ToShortDateString()</td>
+                    <td>Deleted course</td>
+                }
+                else
+                {
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.BeginDate.ToShortDateString()</td>
+                    <td>@item.EndDate.ToShortDateString()</td>
+                    <td>Deactive</td>
+                    <td><a  href="/Course/ActiveCourse/@item.ID">Active</a></td>
+                }
 
-                </tr>
+            </tr>
             }
         </tbody>
     </table>

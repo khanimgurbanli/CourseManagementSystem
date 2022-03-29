@@ -10,6 +10,7 @@
 </head>
 <body>
     <h3>Add Course</h3><br /><br />
+    <h5 class="text-danger">@ViewBag.checkResultMessage</h5>
     <div>
        @using (Html.BeginForm("AddCourse", "Course", FormMethod.Post))
         {
@@ -22,9 +23,9 @@
             @Html.TextBoxFor(x => x.Price, new { @placeholder = "Course of price", @class = "form-control" })<br />
             @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })<br />
 
-            @Html.LabelFor(x => x.Date)<br />
-            @Html.TextBoxFor(x => x.Date, new { @placeholder = "Date and Time", @class = "form-control", type = "datetime" })<br />
-            @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })<br />
+            @Html.LabelFor(x => x.BeginDate)<br />
+            @Html.TextBoxFor(x => x.BeginDate, new { @placeholder = "Date and Time", @class = "form-control", type = "datetime" })<br />
+            @Html.ValidationMessageFor(x => x.BeginDate, "", new { @class = "text-danger" })<br />
 
             <input type="submit" class="btn btn-success" value="Add">
         }

@@ -121,43 +121,37 @@ namespace Course.Controllers
         }
 
 
-        public IActionResult ConfirmStudent(int? id)
+        public IActionResult DeactiveStudent(int? id)
         {
-            var checkStatus = db.Students.Where(s => s.ID == id).FirstOrDefault();
 
-            if (checkStatus.Status == 0)
-            {
-                st.Status = 1;
-                db.Update(st);
-                db.SaveChanges();
-            }
-          
-            return RedirectToAction("ListOfStudents");
-        }
-        
+            var deactiveStudentyId = db.Students.Where(s => s.ID == id).FirstOrDefault();
 
-        public IActionResult DeleteStudent(int? id)
-        {
-            //deactive-0
-            //active-1
-            //deleted-2
-
-            var deleteStudentyId = db.Students.Where(s => s.ID == id).FirstOrDefault();
-
-            deleteStudentyId.Status = 2;
-            db.Update(deleteStudentyId);
+            deactiveStudentyId.Status = 0;
+            db.Update(deactiveStudentyId);
             db.SaveChanges();
 
             return RedirectToAction("ListOfStudents");
         }
 
-        public IActionResult EnableStudent(int? id)
+        public IActionResult ActiveStudent(int? id)
         {
 
-            var enableStudentyId = db.Students.Where(s=> s.ID == id).FirstOrDefault();
+            var enableStudentyId = db.Students.Where(s => s.ID == id).FirstOrDefault();
 
             enableStudentyId.Status = 1;
             db.Update(enableStudentyId);
+            db.SaveChanges();
+
+            return RedirectToAction("ListOfStudents");
+        }
+
+        public IActionResult DeleteStudent(int? id)
+        {
+
+            var deleteStudentyId = db.Students.Where(s => s.ID == id).FirstOrDefault();
+
+            deleteStudentyId.Status = 2;
+            db.Update(deleteStudentyId);
             db.SaveChanges();
 
             return RedirectToAction("ListOfStudents");

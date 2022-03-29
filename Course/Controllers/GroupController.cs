@@ -199,7 +199,30 @@ namespace Course.Controllers
 
         }
 
+        public IActionResult ActiveeGroup(int? id)
+        {
+            var activeGroupById = db.Groups.Where(g => g.ID == id).FirstOrDefault();
 
+
+            activeGroupById.Status = 1;
+            activeGroupById.EndDate = DateTime.Now;
+            db.Update(activeGroupById);
+            db.SaveChanges();
+
+            return RedirectToAction("ListOfGroups");
+        }
+
+        public IActionResult DeactiveGroup(int? id)
+        {
+            var deactiveGroupById = db.Groups.Where(g => g.ID == id).FirstOrDefault();
+
+            deactiveGroupById.Status = 0;
+            deactiveGroupById.EndDate = DateTime.Now;
+            db.Update(deactiveGroupById);
+            db.SaveChanges();
+
+            return RedirectToAction("ListOfGroups");
+        }
 
 
         public IActionResult DeleteGroup(int? id)
@@ -207,6 +230,7 @@ namespace Course.Controllers
             var deleteGroupById = db.Groups.Where(g => g.ID == id).FirstOrDefault();
 
             deleteGroupById.Status = 2;
+            deleteGroupById.EndDate = DateTime.Now;
             db.Update(deleteGroupById);
             db.SaveChanges();
 

@@ -37,10 +37,10 @@ namespace Course.Controllers
 
 
             Courses crs = new();
-            crs.Status =1;
+            crs.Status = 1;
             crs.Name = course.Name;
             crs.Price = course.Price;
-            crs.Date = course.Date;
+            crs.BeginDate = course.BeginDate;
 
             db.Add(crs);
             db.SaveChanges();
@@ -78,9 +78,34 @@ namespace Course.Controllers
 
             editCourseById.Name = course.Name;
             editCourseById.Price = course.Price;
-            editCourseById.Date = course.Date;
+            editCourseById.BeginDate = course.BeginDate;
 
             db.Update(editCourseById);
+            db.SaveChanges();
+
+            return RedirectToAction("ListOfCourse");
+        }
+
+
+        public IActionResult DeactiveCourse(int id)
+        {
+            var deactiveCourseById = db.Courses.Find(id);
+
+            deactiveCourseById.Status = 0;
+            deactiveCourseById.EndDate = DateTime.Now;
+            db.Update(deactiveCourseById);
+            db.SaveChanges();
+
+            return RedirectToAction("ListOfCourse");
+        }
+
+        public IActionResult ActiveCourse(int id)
+        {
+            var activeCourseById = db.Courses.Find(id);
+
+            activeCourseById.Status = 1;
+
+            db.Update(activeCourseById);
             db.SaveChanges();
 
             return RedirectToAction("ListOfCourse");
@@ -91,6 +116,7 @@ namespace Course.Controllers
             var deleteCourseById = db.Courses.Find(id);
 
             deleteCourseById.Status = 2;
+            deleteCourseById.EndDate = DateTime.Now;
             db.Update(deleteCourseById);
             db.SaveChanges();
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <h5><a href="/Students/AddStudent">Add Student</a></h5><br /><br />
+    <h5><a class="btn btn-success" href="/Students/AddStudent">Add Student</a></h5><br /><br />
     <h3>Student list</h3>
     <table class="table">
         <thead>
@@ -21,6 +21,7 @@
                 <th>Enrollment Date</th>
                 <th>Mail</th>
                 <th>Mobile</th>
+                <th>Deatails</th>
             </tr>
         </thead>
         <tbody>
@@ -37,7 +38,7 @@
                     <td>@item.Mail</td>
                     <td>@item.Mobile</td>
                     <td>Active</td>
-                    <td><a href="/Students/GetStudent/@item.ID">Edit</a><a href="/Students/DeleteStudent/@item.ID">Delete</a></td>
+                    <td><a href="/Students/GetStudent/@item.ID">Edit</a><a  href="/Students/DeleteStudent/@item.ID">Delete</a><a  href="/Students/DeactiveStudent/@item.ID">Deactive</a></td>
                 }
                 else if (@item.Status == 0)
                 {
@@ -48,8 +49,8 @@
                     <td>@item.EnrollmentDate.ToShortDateString()</td>
                     <td>@item.Mail</td>
                     <td>@item.Mobile</td>
-                    <td>Waiting for confirmation</td>
-                    <td><a href="/Students/ConfirmStudent/@item.ID">Confirm</a></td>
+                    <td>Deactived</td>
+                    <td><a href="/Students/ActiveStudent/@item.ID">Active</a></td>
                 }
                 else
                 {
@@ -60,9 +61,7 @@
                     <td>@item.EnrollmentDate.ToShortDateString()</td>
                     <td>@item.Mail</td>
                     <td>@item.Mobile</td>
-                    <td>Deleted Student</td>
-                    <td><a href="/Students/EnableStudent/@item.ID">Enable</a></td>
-
+                    <td>Deleted</td>
                 }
 
             </tr>

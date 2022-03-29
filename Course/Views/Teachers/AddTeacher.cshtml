@@ -10,6 +10,7 @@
 </head>
 <body>
     <h3>Add Teacher</h3><br /><br />
+    <h5 class="text-danger">@ViewBag.checkResultMessage</h5>
     <div>
         @using (Html.BeginForm("AddTeacher", "Teachers", FormMethod.Post))
         {
