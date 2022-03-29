@@ -1,0 +1,45 @@
+﻿@model Teachers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <h3>Add Teacher</h3><br /><br />
+    <div>
+        @using (Html.BeginForm("AddTeacher", "Teachers", FormMethod.Post))
+        {
+
+            @Html.LabelFor(x => x.FirstName)<br />
+            @Html.TextBoxFor(x => x.FirstName, new { @placeholder = "First name", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.LastName)<br />
+            @Html.TextBoxFor(x => x.LastName, new { @placeholder = "Last name", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.FatherName)<br />
+            @Html.TextBoxFor(x => x.FatherName, new { @placeholder = "Father name", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.FatherName, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Birthdate)<br />
+            @Html.TextBoxFor(x => x.Birthdate, new { type = "date", @placeholder = "Date of birth", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Birthdate, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Mail)<br />
+            @Html.TextBoxFor(x => x.Mail, new { @placeholder = "Mail", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Mobile)<br />
+            @Html.TextBoxFor(x => x.Mobile, new { @placeholder = "Mobile Number", @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Mobile, "", new { @class = "text-danger" })<br />
+
+            <input type="submit" class="btn btn-success" value="Add">
+        }
+    </div>
+</body>
+</html>

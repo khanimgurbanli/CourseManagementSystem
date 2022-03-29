@@ -1,0 +1,74 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Teachers>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <h5><a href="/Teachers/AddTeacher">Add Teacher</a></h5><br /><br />
+    <h3>Teachers list</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Fathet Name</th>
+                <th>Birtdate</th>
+                <th>Enrollment Date</th>
+                <th>Mail</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @if (@item.Status == 1)
+                    {
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.FatherName</td>
+                        <td>@item.Birthdate.ToShortDateString()</td>
+                        <td>@item.EnrollmentDate.ToShortDateString()</td>
+                        <td>@item.Mail</td>
+                        <td>@item.Mobile</td>
+                        <td>Active</td>
+                        <td><a href="/Teachers/GetTeacher/@item.Id">Edit</a><a href="/Teachers/DeleteTeacher/@item.Id">Delete</a></td>
+                    }
+                    else if (@item.Status == 0)
+                    {
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.FatherName</td>
+                        <td>@item.Birthdate.ToShortDateString()</td>
+                        <td>@item.EnrollmentDate.ToShortDateString()</td>
+                        <td>@item.Mail</td>
+                        <td>@item.Mobile</td>
+                        <td>Waiting for confirmation</td>
+                        <td><a href="/Teachers/ConfirmTeacher/@item.Id">Confirm</a></td>
+                    }
+                    else
+                    {
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.FatherName</td>
+                        <td>@item.Birthdate.ToShortDateString()</td>
+                        <td>@item.EnrollmentDate.ToShortDateString()</td>
+                        <td>@item.Mail</td>
+                        <td>@item.Mobile</td>
+                        <td>Deleted teacher</td>
+                        <td><a href="/Teachers/EnableTeacher/@item.Id">Enable</a></td>
+
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+

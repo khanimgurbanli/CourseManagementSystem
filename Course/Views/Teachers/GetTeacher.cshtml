@@ -1,0 +1,52 @@
+﻿@model Teachers
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <h3>Add Teacher</h3><br /><br />
+    <div>
+        @using (Html.BeginForm("EditTeacher", "Teachers", FormMethod.Post))
+        {
+            @Html.HiddenFor(x => x.Id, new { @class = "form-control" });
+
+            @Html.LabelFor(x => x.FirstName)<br />
+            @Html.TextBoxFor(x => x.FirstName, new { @Value = Model.FirstName, @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.LastName)<br />
+            @Html.TextBoxFor(x => x.LastName, new { @Value = Model.LastName, @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.FatherName)<br />
+            @Html.TextBoxFor(x => x.FatherName, new { @Value = Model.FatherName, @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.FatherName, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Birthdate)<br />
+            @Html.TextBoxFor(x => x.Birthdate, new { @Value = Model.Birthdate.ToShortDateString(), @class = "form-control", type = "datetime" })<br />
+            @Html.ValidationMessageFor(x => x.Birthdate, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.EnrollmentDate)<br />
+            @Html.TextBoxFor(x => x.EnrollmentDate, new { @readonly = Model.EnrollmentDate.ToShortDateString(), @class = "form-control", type = "datetime" })<br />
+            @Html.ValidationMessageFor(x => x.EnrollmentDate, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Mail)<br />
+            @Html.TextBoxFor(x => x.Mail, new { @Value = Model.Mail, @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Mail, "", new { @class = "text-danger" })<br />
+
+            @Html.LabelFor(x => x.Mobile)<br />
+            @Html.TextBoxFor(x => x.Mobile, new { @Value = Model.Mobile, @class = "form-control" })<br />
+            @Html.ValidationMessageFor(x => x.Mobile, "", new { @class = "text-danger" })<br />
+
+            <button class="btn btn-info">Edit</button>
+        }
+    </div>
+</body>
+</html>
+

@@ -24,27 +24,26 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                @if (@item.Status == 1)
-                {
-                    <td>@item.Name</td>
-                    <td>@item.Price</td>
-                    <td>@item.Date.ToShortDateString()</td>
-                    <td>Active</td>
-                    <td><a href="/Course/GetCourse/@item.ID">Edit</a><a href="/Course/DeleteCourse/@item.ID">Delete</a></td>
-                }
-                else
-                {
-                    <td>@item.Name</td>
-                    <td>@item.Price</td>
-                    <td>@item.Date.ToShortDateString()</td>
-                    <td>Deleted course</td>
-                }
+                <tr>
+                    @if (@item.Status == 1)
+                    {
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>@item.Date.ToShortDateString()</td>
+                        <td>Active</td>
+                        <td><a href="/Course/GetCourse/@item.ID">Edit</a><a href="/Course/DeleteCourse/@item.ID">Delete</a></td>
+                    }
+                    else
+                    {
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>@item.Date.ToShortDateString()</td>
+                        <td>Deleted course</td>
+                    }
 
-            </tr>
+                </tr>
             }
         </tbody>
     </table>
 </body>
-
 </html>

@@ -31,7 +31,7 @@ namespace Course.Models
 
 
         [Required(ErrorMessage = "Mail is required")]
-        [RegularExpression(@" ^[a - zA - Z0 - 9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", ErrorMessage = "Invalid Mail number")]
+        [EmailAddress]
         public string Mail { get; set; }
 
         [Required(ErrorMessage = "Number is required")]

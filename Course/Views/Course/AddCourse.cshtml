@@ -1,4 +1,5 @@
 ﻿@model Courses
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,19 +11,19 @@
 <body>
     <h3>Add Course</h3><br /><br />
     <div>
-        @using (Html.BeginForm("AddCourse", "Course", FormMethod.Post))
+       @using (Html.BeginForm("AddCourse", "Course", FormMethod.Post))
         {
-           
+
             @Html.LabelFor(x => x.Name)<br />
             @Html.TextBoxFor(x => x.Name, new { @placeholder = "Course name", @class = "form-control" })<br />
-            @Html.ValidationMessageFor(x => x.Name, "",new { @class = "text-danger" })<br />
+            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })<br />
 
             @Html.LabelFor(x => x.Price)<br />
             @Html.TextBoxFor(x => x.Price, new { @placeholder = "Course of price", @class = "form-control" })<br />
-            @Html.ValidationMessageFor(x => x.Price, "",new { @class = "text-danger" })<br />
+            @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })<br />
 
             @Html.LabelFor(x => x.Date)<br />
-            @Html.TextBoxFor(x => x.Date, new {  @placeholder = "Date and Time", @class = "form-control" , type = "datetime"})<br />
+            @Html.TextBoxFor(x => x.Date, new { @placeholder = "Date and Time", @class = "form-control", type = "datetime" })<br />
             @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })<br />
 
             <input type="submit" class="btn btn-success" value="Add">

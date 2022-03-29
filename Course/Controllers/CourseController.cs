@@ -71,7 +71,7 @@ namespace Course.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("GetCourse");
+                return View("GetCourse", course);
             }
 
             var editCourseById = db.Courses.Where(c => c.ID == course.ID).FirstOrDefault();
@@ -90,7 +90,7 @@ namespace Course.Controllers
         {
             var deleteCourseById = db.Courses.Find(id);
 
-            deleteCourseById.Status = 0;
+            deleteCourseById.Status = 2;
             db.Update(deleteCourseById);
             db.SaveChanges();
 

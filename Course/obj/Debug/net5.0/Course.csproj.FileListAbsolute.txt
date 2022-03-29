@@ -203,3 +203,9 @@ C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Raz
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Group\GetGroup.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Course\GetCourse.cshtml.g.cs
 C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Course\ListOfCourse.cshtml.g.cs
+C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Students\AddStudent.cshtml.g.cs
+C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Students\GetStudent.cshtml.g.cs
+C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Students\ListOfStudents.cshtml.g.cs
+C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Teachers\ListOfTeachers.cshtml.g.cs
+C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Teachers\GetTeacher.cshtml.g.cs
+C:\Users\ACER\Desktop\StudentManagementSystem\Course\Course\obj\Debug\net5.0\Razor\Views\Teachers\AddTeacher.cshtml.g.cs

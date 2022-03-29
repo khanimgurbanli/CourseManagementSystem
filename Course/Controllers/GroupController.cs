@@ -32,6 +32,9 @@ namespace Course.Controllers
 
 
 
+
+
+
         public IActionResult CreateGroup()
         {
             List<SelectListItem> DropDownTeacherList = (from x in db?.Teachers?.ToList()
@@ -52,6 +55,10 @@ namespace Course.Controllers
             ViewBag.CourseList = DropDownCourseList;
             return View();
         }
+
+
+
+
 
 
         [HttpPost]
@@ -115,6 +122,8 @@ namespace Course.Controllers
         }
 
 
+
+
         public IActionResult GetGroup(int? id)
         {
             List<SelectListItem> DropDownTeacherList = (from x in db?.Teachers?.ToList()
@@ -168,7 +177,7 @@ namespace Course.Controllers
 
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("GetGroup");
+                return RedirectToAction("GetGroup", group);
             }
 
 
@@ -190,11 +199,14 @@ namespace Course.Controllers
 
         }
 
+
+
+
         public IActionResult DeleteGroup(int? id)
         {
             var deleteGroupById = db.Groups.Where(g => g.ID == id).FirstOrDefault();
 
-            deleteGroupById.Status = 0;
+            deleteGroupById.Status = 2;
             db.Update(deleteGroupById);
             db.SaveChanges();
 
